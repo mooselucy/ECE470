@@ -1,0 +1,5 @@
+prox = sim.getObjectHandle('BarrettHand_attachProxSensor')
+response = sim.handleProximitySensor(prox)
+sim.persistentDataWrite('proxdata',response)
+
+

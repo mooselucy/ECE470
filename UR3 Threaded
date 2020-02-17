@@ -1,0 +1,35 @@
+-- This is a threaded script, and is just an example!
+
+function sysCall_threadmain()
+    jointHandles={-1,-1,-1,-1,-1,-1}
+    for i=1,6,1 do
+        jointHandles[i]=sim.getObjectHandle('UR3_joint'..i)
+    end
+
+    -- Set-up some of the RML vectors:
+    vel=180
+    accel=40
+    jerk=80
+    currentVel={0,0,0,0,0,0,0}
+    currentAccel={0,0,0,0,0,0,0}
+    maxVel={vel*math.pi/180,vel*math.pi/180,vel*math.pi/180,vel*math.pi/180,vel*math.pi/180,vel*math.pi/180}
+    maxAccel={accel*math.pi/180,accel*math.pi/180,accel*math.pi/180,accel*math.pi/180,accel*math.pi/180,accel*math.pi/180}
+    maxJerk={jerk*math.pi/180,jerk*math.pi/180,jerk*math.pi/180,jerk*math.pi/180,jerk*math.pi/180,jerk*math.pi/180}
+    targetVel={0,0,0,0,0,0}
+
+    targetPos1={0,0,0,0,0,0}
+    sim.rmlMoveToJointPositions(jointHandles,-1,currentVel,currentAccel,maxVel,maxAccel,maxJerk,targetPos1,targetVel)
+    
+    targetPos2={math.pi/2,0,math.pi/2,0,0,math.pi/2,0}
+    sim.rmlMoveToJointPositions(jointHandles,-1,currentVel,currentAccel,maxVel,maxAccel,maxJerk,targetPos2,targetVel)
+
+    targetPos3={math.pi/2+0.2,0,math.pi/2,0,0,math.pi/2,0}
+    sim.rmlMoveToJointPositions(jointHandles,-1,currentVel,currentAccel,maxVel,maxAccel,maxJerk,targetPos3,targetVel)
+    
+    --sensor responsex
+    --x = sim.persistentDataRead('proxdata',pdata)
+    --sim.setObjectInt32Parameter('BarrettHand', 1, 1)
+    
+
+end
+
