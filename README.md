@@ -11,3 +11,4 @@ Project 1 Update:
 
 Project 2 Update:
 - Only attempted to implement inverse kinematics in a UR3 robot
+- Set up the conveyorbelt and proximity sensor and table.
