@@ -9,4 +9,5 @@ Project 1 Update:
 - Implemented robot movement
 - Sensor data is obtainable (not used yet)
 
-X Need to implement sensor data into grip for barrett hand
+Project 2 Update:
+- Only attempted to implement inverse kinematics in a UR3 robot
